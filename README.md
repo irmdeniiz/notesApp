@@ -30,3 +30,6 @@ console.log("en az biri 65 den büyük mü ?", cevap3);
 console.log("en az biri 90 dan büyük mü ?", cevap4);
 
 // \* every dizideki elemanlardan en az bir tansesi verilen koşula uyuyor mu kontrol eder
+
+![noteapp_V1](https://github.com/user-attachments/assets/558a234d-7b86-4d21-a98f-70c1d941fabf)
+
