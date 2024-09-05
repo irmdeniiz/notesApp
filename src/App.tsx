@@ -12,28 +12,23 @@ const App = () => {
   const [notes, setNotes] = useLocalStorage<Note[]>("NOTES", []);
   const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", []);
 
-  // tag oluşturma fonksiyonu
   const createTag = (tag: Tag): void => {
     setTags((prev) => [...prev, tag]);
   };
 
-  // not oluşturma fonksiyonu
   const createNote = (noteData: NoteData): void => {
-    // formdan gelen dataya id ekle
+    
     const newNote: Note = { id: v4(), ...noteData };
 
-    // state'i güncelle
     setNotes((prev) => [...prev, newNote]);
   };
 
-  // not silme fonksiyonu
   const deleteNote = (id: string): void => {
     if (!confirm("silmek istediğnizden emin misiniz?")) return;
 
     setNotes((prev) => prev.filter((i) => i.id !== id));
   };
 
-  // note'ı düzenleme fonksiyonıı
   const updateNote = (id: string, updatedData: NoteData): void => {
     const updatedArr = notes.map((note) =>
       note.id === id ? { id, ...updatedData } : note
