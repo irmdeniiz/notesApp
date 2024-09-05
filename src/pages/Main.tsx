@@ -14,14 +14,7 @@ const Main = ({ availableTags, notes }: Props) => {
   const [query, setQuery] = useState<string>("");
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
-  /*
-   * 1) Not başlığı 1. inputta aratılan metni içermelidir. Note'un başlığının küçük harfe çevrilmiş hali aratılan metnin küçük harfe çevrilmiş halini içeriyorsa koşul sağlanır
-
-   && 
-
-   2) 2.input ile seçilen etiketler note'un içerisindeki etiketler ile birebir eşleşmelidir. Seçilen etiketler idizndeki her bir etiket için note'a ait etiketler arasında eşleşme kontrolü yapıcaz
-  */
-
+  
   const filtredNotes = useMemo(
     () =>
       notes.filter(
@@ -36,7 +29,6 @@ const Main = ({ availableTags, notes }: Props) => {
 
   return (
     <Container className="mx-auto py-5">
-      {/* Üst Kısım */}
       <Stack
         direction="horizontal"
         className="justify-content-between mb-4"
@@ -51,7 +43,6 @@ const Main = ({ availableTags, notes }: Props) => {
         </Link>
       </Stack>
 
-      {/* Form Alanı */}
       <Form>
         <Row>
           <Col>
@@ -74,7 +65,6 @@ const Main = ({ availableTags, notes }: Props) => {
         </Row>
       </Form>
 
-      {/* Not Listesi */}
       <Row xs={1} sm={2} lg={3} xl={4} className="mt-4 g-4">
         {filtredNotes.map((note) => (
           <Col key={note.id}>
